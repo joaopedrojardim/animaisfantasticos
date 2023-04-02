@@ -1,6 +1,6 @@
 import AnimaNumeros from './anima-numeros.js'
 
-export default function fetchAnimais(url, target) {
+export default function fetchAnimais(target) {
   const numerosGrid = document.querySelector(target)
 
   function createAnimal(animal) {
@@ -22,7 +22,7 @@ export default function fetchAnimais(url, target) {
 
   async function criarAnimais() {
     try {
-      const animaisResponse = await fetch(url)
+      const animaisResponse = await fetch('./../../animaisapi.json')
       const animaisJSON = await animaisResponse.json()
       animaisJSON.forEach(animal => preencherAnimais(animal))
       animaAnimaisNumeros()
