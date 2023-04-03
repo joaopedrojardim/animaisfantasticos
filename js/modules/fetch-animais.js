@@ -22,9 +22,9 @@ export default function fetchAnimais() {
 
   async function criarAnimais() {
     try {
-      /* const animaisResponse = await fetch("./../../animaisapi.json")
-      const animaisJSON = await animaisResponse.json() */
-      const animaisJSON = [
+      const animaisResponse = await fetch("./animaisapi.json")
+      const animaisJSON = await animaisResponse.json() 
+      /* const animaisJSON = [
         {
           specie: "Lobos",
           total: 4874
@@ -41,7 +41,7 @@ export default function fetchAnimais() {
           specie: "Ursos",
           total: 230
         }
-      ]
+      ] */
       animaisJSON.forEach(animal => preencherAnimais(animal))
       animaAnimaisNumeros()
     } catch (erro) {
